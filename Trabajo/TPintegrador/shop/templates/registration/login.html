@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Ingreso Al Sistema</title>
+    
+</head>
+<style>
+    body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: url("https://images3.alphacoders.com/919/919734.jpg");
+    background-attachment: fixed, fixed;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
+  
+  }
+  
+  .card{
+      color: white;
+  }
+  </style>
+<body>
+    {% load crispy_forms_tags %}
+    <br><br><br><br><br> <br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <h2>Ingrese su usuario y contraseña</h2>
+                        <hr>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <input type="submit" value=" ingresar" class="btn btn-success float-right">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
